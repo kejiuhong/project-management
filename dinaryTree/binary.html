@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html leng="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>二叉樹</title>
+</head>
+
+<body>
+    <script>
+    function BinaryTree() {
+
+        var Node = function(key) { //将传入值添加this.key,this.left,this.right属性
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        };
+        var root = null; //初始化root根为空值
+
+        //将传入值进行判断,作为父节点的左支或右支
+        var insertNode = function(node, newNode) {
+            if (newNode.key < node.key) {
+                //如果传入值小于父节点,作为左支,不过要先进行判断左支是否已经存在
+                if (node.left === null) {
+                    //如果左支是null空值,将传入值作为左支
+                    node.left = newNode;
+                } else {
+                    //否则(左支已经存在)继续执行函数进行下个节点的判断
+                    insertNode(node.left, newNode);
+                }
+            } else {
+
+                //否则(传入值大于父节点)作为右支,不过要先进行判断右支是否已经存在
+                if (node.right === null) {
+                    //如果右支是null空值,将传入值作为右支
+                    node.right = newNode;
+                } else {
+                    //否则(右支已经存在)继续执行函数进行下个节点的判断
+                    insertNode(node.right, newNode);
+                }
+            }
+        };
+
+
+        //函数的入口,第一步执行的函数,确定root根的值
+        this.insert = function(key) {
+            var newNode = new Node(key);
+            //newNode拥有newNode.key=key,newNode.left=null,newNode.right=null
+
+            if (root === null) {
+
+                root = newNode;
+                //如果没有root根,将传入值作为root根
+            } else {
+                //如果已经存在根,执行insertNode函数
+                insertNode(root, newNode);
+            }
+        };
+
+
+
+        //将root根值和传入值(callback)赋给inOrderTraverseNod(),执行inOrderTraverseNod()
+        //中序遍历
+
+        this.inOrderTraverse = function(callback) {
+            inOrderTraverseNode(root, callback);
+        };
+        //前序遍历
+        //
+
+        var preOrderTraverseNode = function(node, callback) {
+            if (node !== null) {
+                callback(node.key);
+                preOrderTraverseNode(node.left, callback);
+                preOrderTraverseNode(node.right, callback);
+            }
+        };
+
+        this.preOrderTraverse = function(callback) {
+            preOrderTraverseNode(root, callback);
+        };
+
+
+
+        //后序遍历
+        //
+        var postOrderTraverseNode=function(node,callback){
+        	if(node!==null){
+        		postOrderTraverseNode(node.left,callback);
+        		postOrderTraverseNode(node.right,callback);
+        		callback(node.key);
+        	}
+        }
+        
+        this.postOrderTraverse=function(callback){
+        	postOrderTraverseNode(root,callback);
+        }
+    };
+
+    //传入子节点(callback)和父节点(node)(第一次的父节点就是root)
+    var inOrderTraverseNode = function(node, callback) {
+
+        //如果父节点存在,继续将左支和右支执行inOrderTraverseNod(),直到不存在子分支为止
+
+        // !!注意if结构里面的函数执行顺序,先执行inOrderTraverseNode(node.left,callback);再执行callback(node.key);最后执行inOrderTraverseNode(node.right,callback);
+
+        //当inOrderTraverseNode(node.left,callback);执行完之后,才会再执行callback(node.key);(即先打印完左分支的值,再打印最顶层的父节点,这样就达到了从小到大的排序效果).右分支同理
+
+        if (node !== null) {
+            inOrderTraverseNode(node.left, callback);
+            callback(node.key);
+            inOrderTraverseNode(node.right, callback);
+        }
+    };
+
+
+    var nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+
+    //实例化BinaryTree
+    var binaryTree = new BinaryTree();
+
+    //遍历nodes数组,将每个数组的值(key)传入binary.insert(),执行insert()函数
+    nodes.forEach(function(key) {
+        binaryTree.insert(key);
+    });
+
+
+    //定义callback函数,将传入callback的值打印出来
+    var callback = function(key) {
+        console.log(key);
+    };
+
+    //注意此callback是参数,不是function函数,执行的是inOrderTraverse(),不是上面的callback()
+    binaryTree.postOrderTraverse(callback);
+    </script>
+</body>
+
+</html>
