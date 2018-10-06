@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>shopping trolley</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <table id="shopping">
+            <thead>
+                <tr>
+                    <td class="allcheck"><input id="allcheck" type="checkbox">全选</td>
+                    <td class="goods">商品</td>
+                    <td class="price">单价</td>
+                    <td class="num">数量</td>
+                    <td class="subtotal">小计</td>
+                    <td class="control">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="0" src="images/1.jpg" alt="">
+                        <span>Casio/卡西欧 EX-TR350</span>
+                    </td>
+                    <td class="price">5999.88</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal" id="subtotal">5999.88</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox" value="✔"></td>
+                    <td class="goods">
+                        <img class="1" src="images/2.jpg" alt="">
+                        <span>Canon/佳能 PowerShot SX50 HS</span>
+                    </td>
+                    <td class="price">3888.50</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal" id="subtotal">3888.50</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="2" src="images/3.jpg" alt="">
+                        <span>Sony/索尼 DSC-WX300</span>
+                    </td>
+                    <td class="price">1428.50</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal">1428.50</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="3" src="images/4.jpg" alt="">
+                        <span>Fujifilm/富士 instax mini 25</span>
+                    </td>
+                    <td class="price">640.60</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal">640.60</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="3" src="images/5.jpg" alt="">
+                        <span>Fujifilm/富士 instax mini 25</span>
+                    </td>
+                    <td class="price">640.60</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal">640.60</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="3" src="images/6.jpg" alt="">
+                        <span>Fujifilm/富士 instax mini 25</span>
+                    </td>
+                    <td class="price">640.60</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal">640.60</td>
+                    <td class="control del">删除</td>
+                </tr>
+                <tr>
+                    <td class="check"><input class="checked" type="checkbox"></td>
+                    <td class="goods">
+                        <img class="3" src="images/7.jpg" alt="">
+                        <span>Fujifilm/富士 instax mini 25</span>
+                    </td>
+                    <td class="price">640.60</td>
+                    <td class="num">
+                        <span class="reduce"></span><input class="number" type="text" value="1" /><span class="add">+</span>
+                    </td>
+                    <td class="subtotal">640.60</td>
+                    <td class="control del">删除</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="foot" class="foot">
+        	<input id="selectedallDown" type="checkbox"><label>全选</label>
+        	<a class="all-del" href="javascript:">删除</a>
+        	<div id="account">结算</div>
+        	<div class="total" id="total">
+        		<span>合计：￥<span id="accounttotal">0.00</span></span>
+        	</div>
+        	<div class="selected" id="selected">
+        		<span class="selectedGoods">已选商品<span id="selectedtotal">0</span>件</span>
+        		<span class="arrow up">︽</span>
+        		<span class="arrow down">︾</span>
+        	</div>
+        	<div id="veiw-selected">
+        		<div id="veiwSelectedList">
+        			<!-- <div class="selectedImg">
+	        			<img  href="http://img.mukewang.com/53b4c149000144b202200220.jpg" alt=""/>
+	        			<span class="del-selected">取消选择</span>
+	        		</div> -->
+        			
+        		</div>
+        		<span class="arrow_selected"></span>
+        	</div>
+        </div>
+    </div>
+</body>
+
+</html>

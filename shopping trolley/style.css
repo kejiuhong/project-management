@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    width: 980px;
+    height: auto;
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+tr {
+    border: 1px solid #aee9f8;
+    background: #dfeffa;
+}
+
+thead tr {
+    line-height: 30px;
+    height: 30px;
+    border-top: 2px solid #29c1e6;
+    font-weight: bolder;
+}
+
+td {
+    padding: 5px 15px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+tbody td {
+    width: 100px;
+    height: 110px;
+    position: relative;
+}
+
+input {
+   /* appearance: none;
+    -webkit-appearance: none;
+    outline: none;*/
+    border: 1px solid #bebcbc;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+}
+
+
+
+.allcheck {
+    width: 46px;
+    text-align: left;
+}
+
+.check {
+    width: 30px;
+}
+.checked{
+	
+}
+
+.goods {
+    width: 320px;
+}
+
+.goods span {
+    width: 180px;
+    text-align: left;
+    margin-top: 20px;
+    float: right;
+}
+
+img {
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    margin-right: 15px;
+    background: #fff;
+}
+
+.num span {
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    background: #efeded;
+    position: relative;
+    cursor: pointer;
+}
+
+.num .add,.num .reduce,.num .number {
+    float:left;
+}
+
+.number {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+}
+
+.subtotal {
+    color: #c70707;
+    font-weight: bolder;
+}
+.del{
+	cursor:pointer;
+}
+#foot {
+    position: relative;
+    width: 946px;
+    height: 50px;
+    margin-top: 5px;
+    padding: 0px 3px;
+    border: 1px solid #bebcbc;
+    background: -webkit-linear-gradient(#f6f6f6, #e1dfdf);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#f6f6f6, #e1dfdf);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#f6f6f6, #e1dfdf);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(#f6f6f6, #e1dfdf);
+    /* 标准的语法 */
+    line-height: 50px;
+}
+
+#foot div {
+    float: right;
+    position: relative;
+}
+
+#account {
+    width: 100px;
+    border-left: 1px solid #bebcbc;
+    text-align: center;
+    margin-left: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.total {
+    width: 150px;
+    margin-left: 40px;
+}
+
+#accounttotal {
+    color: #c70707;
+    font-size: 16px;
+    font-weight: bolder;
+    
+}
+
+#selected {
+    position: relative;
+    cursor:pointer;
+}
+
+#selectedtotal {
+    color: #c70707;
+    font-weight: bolder;
+    padding: 0px 5px;
+}
+
+.arrow {
+    position: absolute;
+    top: -3px;
+    left: 100px;
+    cursor:pointer;
+}
+
+.show .up{
+	display:none;
+}
+.show .down {
+    display: inline-block;
+    
+}
+.down{
+	display:none;
+	top: 5px;
+}
+
+
+.foot #veiw-selected {
+    position: absolute;
+    width: 912px;
+    height: auto;
+    border: 1px solid #bebcbc;
+    border-bottom: 1px solid transparent;
+    bottom: 51px;
+    left: -1px;
+    z-index:9;
+    background: #fff;
+    padding: 10px 20px;
+    display: none;
+}
+.show #veiw-selected{
+	display:inline-block;
+}
+#foot #veiw-selected #veiwSelectedList {
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+
+#foot #veiw-selected #veiwSelectedList .selectedImg {
+    float:left;
+    width: 100px;
+    height: 80px;
+    text-align: center;
+    padding:10px;
+    margin: 0px 10px;
+    margin-top:10px;
+    border: 1px solid #bebcbc;
+    position:relative;
+}
+#selected{
+	width:auto;
+	height:auto;
+}
+.del-selected{
+	display:none;
+	background:rgba(0,0,0,.5);
+	color:#fff;
+	font-size:12px;
+	height:15px;
+	padding: 2px 5px;
+    line-height: 15px;
+    position: relative;
+    bottom: 127px;
+    left: 31px;
+    cursor:pointer;
+}
+.selectedImg:hover .del-selected{
+	display:inline-block;
+}
+.arrow_selected {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    bottom: -36px;
+    left: 588px;
+    background: #fff;
+    border: 1px solid transparent;
+    border-right: 1px solid #bebcbc;
+    border-bottom: 1px solid #bebcbc;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -moz-transform: rotate(45deg);
+    /* Firefox */
+    -webkit-transform: rotate(45deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(45deg);
+    /* Opera */
+}
